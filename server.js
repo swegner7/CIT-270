@@ -7,7 +7,7 @@ const fs = require('fs');
 
 const app = express();
 
-const port = 3000;
+const port = 443;
 
 const redisClient = Redis.createClient({url:'redis://127.0.0.1:6379'});
 
@@ -18,7 +18,7 @@ https.createServer({
     cert: fs.readFileSync('/etc/letsencrypt/archive/spencerwegner.cit270.com/cert1.pem'),
     chain: fs.readFileSync('/etc/letsencrypt/archive/spencerwegner.cit270.com/fullchain1.pem')
   },
-   app).listen(3000, () => {
+   app).listen(port, () => {
     redisClient.connect();
     console.log('Listening...')
   });
