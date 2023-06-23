@@ -4,3 +4,6 @@ server.cert
 server.key
 *.pem
 package-lock.json
+ssh_rsa
+ssh_rsa.pub
+sshkeybackup.txt

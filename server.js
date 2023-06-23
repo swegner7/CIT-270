@@ -13,15 +13,20 @@ const redisClient = Redis.createClient({url:'redis://127.0.0.1:6379'});
 
 app.use(bodyParser.json()); //allow json requests | JSON(Javascript Object Notation)
 
-https.createServer({
-    key: fs.readFileSync('/etc/letsencrypt/archive/spencerwegner.cit270.com/privkey1.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/archive/spencerwegner.cit270.com/cert1.pem'),
-    ca: fs.readFileSync('/etc/letsencrypt/archive/spencerwegner.cit270.com/chain1.pem')
-  },
-   app).listen(port, () => {
+app.listen(port, () => {
     redisClient.connect();
-    console.log('Listening...')
-  });
+    console.log("Listening...")
+});
+
+// https.createServer({
+//     key: fs.readFileSync('/etc/letsencrypt/archive/spencerwegner.cit270.com/privkey1.pem'),
+//     cert: fs.readFileSync('/etc/letsencrypt/archive/spencerwegner.cit270.com/cert1.pem'),
+//     ca: fs.readFileSync('/etc/letsencrypt/archive/spencerwegner.cit270.com/chain1.pem')
+//   },
+//    app).listen(port, () => {
+//     redisClient.connect();
+//     console.log('Listening...')
+//   });
 
 app.get('/', (req, res)=> {
     res.send("Welcome to your Node Server!");
