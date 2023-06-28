@@ -24,7 +24,7 @@ spec:
 # name of container      
       - name: cit270spencerservice
 # Docker image registry      
-        image:    #paste here from artifact registry pls :)
+        image:    us-docker.pkg.dev/cit270-kubernetes-team/spencerw-token-api/image:latest
 # First part of the command to start our API          
         command: ["npm"]
 # Parameters to add to the command        
@@ -61,7 +61,7 @@ metadata:
   name: stedi-spencer-certificate
 spec:
   domains:
-    - Name.cit270.com # this needs to be your domain name from DNS
+    - spencerwegner.cit270.com # this needs to be your domain name from DNS
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
