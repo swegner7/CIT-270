@@ -9,7 +9,13 @@ const app = express();
 
 const port = 443;
 
-const redisClient = Redis.createClient({url:'redis://default:Password1@redis-stedi-spencer:6379'});
+const redisClient = Redis.createClient({
+    // url:'redis://default:Password1@redis-stedi-spencer:6379'
+    socket:{ 
+        host: 'redis-stedi-spencer-0',
+        port: '6379'
+}
+});
 
 app.use(bodyParser.json()); //allow json requests | JSON(Javascript Object Notation)
 
