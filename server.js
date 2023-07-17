@@ -12,7 +12,7 @@ const port = 3000;
 const redisClient = Redis.createClient({
     // url:'redis://default:Password1@redis-stedi-spencer:6379'
     socket:{ 
-        host: '127.0.0.1',
+        host: 'redis-stedi-spencer',
         port: '6379'
 }
 });//redis-stedi-spencer
